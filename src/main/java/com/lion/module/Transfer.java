@@ -15,6 +15,7 @@ public class Transfer {
                     .map(Object::toString)
                     .collect(Collectors.joining());
             this.num = Integer.parseInt(collect);
+            this.actionCode = command.substring(0, 2);
         } else {
             if (command.length() > 1) {
                 this.actionCode = command.substring(0, 2);

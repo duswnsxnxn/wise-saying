@@ -18,9 +18,9 @@ public class WiseApp {
 
     public static void run(WiseApp wiseApp) {
         int num = 0;
-        Transfer transfer = new Transfer();
         System.out.println(" == 명언 앱 == ");
         while (true) {
+            Transfer transfer = new Transfer();
             System.out.print("명령) ");
             transfer.transfer(wiseApp.sc.nextLine());
             String command = transfer.getActionCode();
@@ -33,12 +33,8 @@ public class WiseApp {
                 }
                 case "등록" -> wiseApp.write(++num);
                 case "목록" -> wiseApp.getWiseList();
-                case "삭제" -> {
-                    wiseApp.deleteWise(transfer.getNum());
-                }
-//                case "수정" -> {
-//                    wiseApp.modify(transfer.get);
-//                }
+                case "삭제" -> wiseApp.deleteWise(transfer.getNum());
+                case "수정" -> wiseApp.modify(transfer.getNum());
             }
 
         }
@@ -78,12 +74,22 @@ public class WiseApp {
                 System.out.println(num + "번 명언이 삭제되었습니다.");
             }
         } catch (Exception e) {
-            System.out.println("삭제할 번호를 입력해주세요.");
+            System.out.println("삭제할 번호를 정확히 입력해주세요.");
         }
     }
 
-    private void modify(String origin) {
-
+    private void modify(int num) {
+        int index = num - 1;
+        Wise wise = wiseList.get(index);
+        if (wise == null || wise.isCheck() == true) {
+            System.out.println(num + "번 명언은 존재하지 않습니다.");
+        }
+        System.out.println("명언(기존) : " + wise.getWise());
+        System.out.print("명언 : ");
+        wise.setWise(sc.nextLine());
+        System.out.println("작가(기존) : " + wise.getWriter());
+        System.out.print("작가 : ");
+        wise.setWriter(sc.nextLine());
     }
 
 

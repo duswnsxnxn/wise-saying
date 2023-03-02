@@ -1,5 +1,7 @@
 package com.lion;
 
+import com.lion.module.Transfer;
+
 import java.util.List;
 import java.util.Scanner;
 
@@ -16,10 +18,15 @@ public class WiseApp {
 
     public static void run(WiseApp wiseApp) {
         int num = 0;
+        Transfer transfer = new Transfer();
         System.out.println(" == 명언 앱 == ");
         while (true) {
             System.out.print("명령) ");
-            String command = wiseApp.sc.nextLine().trim();
+            transfer.transfer(wiseApp.sc.nextLine());
+            String command = transfer.getActionCode();
+            if (command == null) {
+                continue;
+            }
             switch (command) {
                 case "종료" -> {
                     return;
@@ -27,8 +34,11 @@ public class WiseApp {
                 case "등록" -> wiseApp.write(++num);
                 case "목록" -> wiseApp.getWiseList();
                 case "삭제" -> {
-                    wiseApp.deleteWise(wiseApp.sc.nextInt());
+                    wiseApp.deleteWise(transfer.getNum());
                 }
+//                case "수정" -> {
+//                    wiseApp.modify(transfer.get);
+//                }
             }
 
         }
@@ -50,20 +60,31 @@ public class WiseApp {
         System.out.println("-----------------------");
         for (int i = wiseList.size() - 1; i >= 0; i--) {
             int num = wiseList.get(i).getNum();
-            String writer = wiseList.get(i).getWriter();
-            String wise = wiseList.get(i).getWise();
-            System.out.println(num + " / " + writer + " / " + wise);
+            if (wiseList.get(i).isCheck() == false) {
+                String writer = wiseList.get(i).getWriter();
+                String wise = wiseList.get(i).getWise();
+                System.out.println(num + " / " + writer + " / " + wise);
+            }
         }
     }
 
     private void deleteWise(int num) {
-        int index = num -1;
-        if (wiseList.get(index) == null) {
-            System.out.println(index + "번 명언은 존재하지 않습니다.");
-        } else {
-            wiseList.remove(index);
-            System.out.println(num + "번 명언이 삭제되었습니다.");
+        int index = num - 1;
+        try {
+            if (wiseList.get(index).isCheck() == true) {
+                System.out.println(num + "번 명언은 존재하지 않습니다.");
+            } else {
+                wiseList.get(index).setCheck(true);
+                System.out.println(num + "번 명언이 삭제되었습니다.");
+            }
+        } catch (Exception e) {
+            System.out.println("삭제할 번호를 입력해주세요.");
         }
     }
+
+    private void modify(String origin) {
+
+    }
+
 
 }

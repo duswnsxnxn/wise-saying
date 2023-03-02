@@ -11,5 +11,6 @@ public class Main {
         List<Wise> wiseList = new ArrayList<>();
         WiseApp wiseApp = new WiseApp(scanner, wiseList);
         WiseApp.run(wiseApp);
+        scanner.close();
     }
 }

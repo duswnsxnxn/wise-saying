@@ -4,9 +4,10 @@ public class Wise {
     private String wise;
     private String writer;
     private int num;
+    private boolean check;
 
     public Wise() {
-        num++;
+        check = false;
     }
 
     public String getWise() {
@@ -31,5 +32,13 @@ public class Wise {
 
     public void setNum(int num) {
         this.num = num;
+    }
+
+    public boolean isCheck() {
+        return check;
+    }
+
+    public void setCheck(boolean check) {
+        this.check = check;
     }
 }

@@ -1,5 +1,7 @@
 package com.lion;
 
+import com.lion.dto.Wise;
+import com.lion.repository.FileRepository;
 import com.lion.module.Transfer;
 
 import java.util.List;
@@ -42,12 +44,14 @@ public class WiseApp {
 
     private void write(int num) {
         Wise wise = new Wise();
+        FileRepository fileRepository = new FileRepository();
         wise.setNum(num);
         System.out.print("명언 : ");
         wise.setWise(sc.nextLine());
         System.out.print("작가 : ");
         wise.setWriter(sc.nextLine());
         wiseList.add(wise);
+        fileRepository.save(wiseList);
         System.out.println(num + "번 명언이 등록되었습니다.");
     }
 

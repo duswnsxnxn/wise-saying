@@ -1,4 +1,4 @@
-package com.lion;
+package com.lion.dto;
 
 public class Wise {
     private String wise;

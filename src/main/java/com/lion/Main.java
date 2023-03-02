@@ -1,5 +1,7 @@
 package com.lion;
 
+import com.lion.dto.Wise;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;

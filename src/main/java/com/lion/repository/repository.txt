@@ -1,4 +1,5 @@
-[{"wise":"1","writer":"1","num":1,"check":false},{"wise":"123","writer":"123","num":2,"check":false}]
-
-[{"wise":"444","writer":"444","num":1,"check":false}]
-[{"wise":"444","writer":"444","num":1,"check":false},{"wise":"555","writer":"555","num":2,"check":false}]
+{"wise":"1","writer":"1","num":1,"check":false}
+{"wise":"2","writer":"2","num":2,"check":false}
+{"wise":"1","writer":"1","num":3,"check":false}
+{"wise":"2","writer":"2","num":4,"check":false}
+{"wise":"ㅁㄴㅇ","writer":"ㅁㄴㅇ","num":5,"check":false}

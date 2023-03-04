@@ -1,5 +1,7 @@
 package com.lion;
 
+import com.lion.config.AppConfig;
+import com.lion.controller.WiseController;
 import com.lion.dto.Wise;
 
 import java.util.ArrayList;
@@ -9,10 +11,8 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        List<Wise> wiseList = new ArrayList<>();
-        WiseApp wiseApp = new WiseApp(scanner, wiseList);
+        WiseApp wiseApp = new WiseApp();
         WiseApp.run(wiseApp);
-        scanner.close();
+        AppConfig.scan().close();
     }
 }

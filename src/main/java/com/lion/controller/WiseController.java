@@ -2,9 +2,6 @@ package com.lion.controller;
 
 import com.lion.service.WiseService;
 
-import java.util.List;
-import java.util.Scanner;
-
 public class WiseController {
 
     private final WiseService wiseService;
@@ -22,7 +19,7 @@ public class WiseController {
     }
 
     public void modify(int num) {
-
+        wiseService.modify(num);
     }
 
     public void delete(int num) {

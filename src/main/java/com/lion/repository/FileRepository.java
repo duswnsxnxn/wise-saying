@@ -18,19 +18,23 @@ public class FileRepository {
     }
 
     public List<Wise> read() {
-        return FileUtil.read(fileUtil);
+        return fileUtil.read();
     }
 
-    public void modify(int num) {
-
+    public void modify(Wise wise) {
+        fileUtil.modify(wise);
     }
 
     public void delete(int num) {
-
+        fileUtil.delete(num);
     }
 
     public int getNum() {
         return fileUtil.wiseNum();
+    }
+
+    public Wise findById(int num) {
+        return fileUtil.findById(num);
     }
 
 }

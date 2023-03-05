@@ -1,5 +1,2 @@
-{"wise":"1","writer":"1","num":1,"check":false}
-{"wise":"2","writer":"2","num":2,"check":false}
-{"wise":"1","writer":"1","num":3,"check":false}
-{"wise":"2","writer":"2","num":4,"check":false}
-{"wise":"ㅁㄴㅇ","writer":"ㅁㄴㅇ","num":5,"check":false}
+{"wise":"11","writer":"11","num":1}
+{"wise":"222222","writer":"222222222","num":2}

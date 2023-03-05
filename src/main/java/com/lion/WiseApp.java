@@ -29,7 +29,7 @@ public class WiseApp {
                 case "등록" -> wiseApp.wiseController.write();
                 case "목록" -> wiseApp.wiseController.getList();
                 case "삭제" -> wiseApp.wiseController.delete(transfer.getNum());
-//                case "수정" ->
+                case "수정" -> wiseApp.wiseController.modify(transfer.getNum());
             }
 
         }
